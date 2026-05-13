@@ -38,14 +38,6 @@
     background-attachment: fixed;
   }
 
-  .mono {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
   /* ── HEADER ────────────────────────────────── */
   header {
     position: sticky;
@@ -150,6 +142,51 @@
     line-height: 1.6;
   }
 
+  /* ── ROOM OVERVIEW STATS ──────────────────── */
+  .stats {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .stat {
+    padding: 1.5rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: rgba(20, 20, 28, 0.4);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .stat:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .stat-num {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--accent) 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
   /* ── SECTIONS ───────────────────────────────── */
   .section {
     padding: 4rem 2rem;
@@ -250,7 +287,7 @@
     box-shadow: 0 0 20px var(--accent-glow);
   }
 
-  /* Single image full-width frame for standalone shots */
+  /* Single image full-width frame */
   .single-frame {
     position: relative;
     aspect-ratio: 16 / 10;
@@ -272,6 +309,56 @@
   }
 
   .single-frame:hover img { transform: scale(1.02); }
+
+  /* ── FLOORPLAN ────────────────────────────── */
+  .floorplans {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .floorplan {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.5rem;
+    background:
+      radial-gradient(ellipse at center, rgba(168, 85, 247, 0.06), transparent 70%),
+      rgba(20, 20, 28, 0.3);
+    transition: border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .floorplan:hover { border-color: var(--accent); }
+
+  .floorplan-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .floorplan-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+
+  .floorplan-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
 
   /* ── FOOTER ───────────────────────────────── */
   footer {
@@ -328,6 +415,11 @@
     header { padding: 1rem 1.25rem; }
     .header-meta { display: none; }
     .hero { padding: 3.5rem 1.25rem 2.5rem; }
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1.5rem 1.25rem 3rem;
+    }
+    .stat-num { font-size: 2rem; }
     .section { padding: 3rem 1.25rem; }
     .section-header {
       flex-direction: column;
@@ -337,6 +429,7 @@
     .section-desc { text-align: left; }
     .comparison { grid-template-columns: 1fr; gap: 0.75rem; }
     .single-frame { aspect-ratio: 4 / 3; }
+    .floorplans { grid-template-columns: 1fr; gap: 1rem; }
     footer {
       flex-direction: column;
       align-items: flex-start;
@@ -364,6 +457,26 @@
     Строим офис для стриминга, аффилиейтов и инфлюенсеров с готовыми воркстейшнами.
   </p>
 </section>
+
+<!-- ROOM OVERVIEW STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">6</div>
+    <div class="stat-label">Комнат</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1</div>
+    <div class="stat-label">Open Space</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1</div>
+    <div class="stat-label">Living Area</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1</div>
+    <div class="stat-label">Bar / Working</div>
+  </div>
+</div>
 
 <!-- 01 — TV / LOUNGE ZONE -->
 <section class="section fade-up">
@@ -449,7 +562,7 @@
   </div>
 </section>
 
-<!-- 05 — RECEPTION / OFFICE AREA -->
+<!-- 05 — RECEPTION -->
 <section class="section fade-up">
   <div class="section-header">
     <div class="section-left">
@@ -470,7 +583,7 @@
   </div>
 </section>
 
-<!-- 06 — LIVING ROOM / WOHNZIMMER -->
+<!-- 06 — LIVING ROOM -->
 <section class="section fade-up">
   <div class="section-header">
     <div class="section-left">
@@ -482,6 +595,27 @@
   <div class="single-frame">
     <span class="image-label after">Финал</span>
     <img src="images/wohnzimmer.png" alt="Гостиная" loading="lazy">
+  </div>
+</section>
+
+<!-- 07 — FLOORPLANS -->
+<section class="section fade-up">
+  <div class="section-header">
+    <div class="section-left">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Планировка</h2>
+    </div>
+    <p class="section-desc">Two floors · Ground &amp; 1st Floor.</p>
+  </div>
+  <div class="floorplans">
+    <div class="floorplan">
+      <div class="floorplan-label">Ground Floor</div>
+      <img class="floorplan-img" src="images/grundriss_1.png" alt="Grundriss Erdgeschoss" loading="lazy">
+    </div>
+    <div class="floorplan">
+      <div class="floorplan-label">1st Floor</div>
+      <img class="floorplan-img" src="images/grundriss_topfloor.png" alt="Grundriss 1. Etage" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -497,7 +631,6 @@
 </footer>
 
 <script>
-  // Scroll-triggered fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

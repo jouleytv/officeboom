@@ -38,379 +38,226 @@
     background-attachment: fixed;
   }
 
-  /* ── HEADER ────────────────────────────────── */
   header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: sticky; top: 0; z-index: 100;
     background: rgba(10, 10, 15, 0.75);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--line);
     padding: 1.25rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
   }
 
   .logo {
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: -0.01em;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-weight: 700; font-size: 1rem; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 0.5rem;
   }
-
   .logo-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 12px var(--accent-glow);
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 12px var(--accent-glow);
   }
-
   .logo span { color: var(--accent); }
 
   .header-meta {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.1em; text-transform: uppercase;
   }
 
-  /* ── HERO ──────────────────────────────────── */
   .hero {
     padding: 7rem 2rem 5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
+    max-width: 1400px; margin: 0 auto; position: relative;
   }
 
   .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.4rem 0.9rem;
     border: 1px solid var(--accent);
-    border-radius: 100px;
-    color: var(--accent);
+    border-radius: 100px; color: var(--accent);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
     margin-bottom: 2rem;
     background: rgba(168, 85, 247, 0.08);
   }
-
   .hero-tag::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent-glow);
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);
     animation: pulse 2s ease-in-out infinite;
   }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
   .hero h1 {
     font-size: clamp(3rem, 10vw, 8rem);
-    font-weight: 700;
-    line-height: 0.92;
-    letter-spacing: -0.04em;
+    font-weight: 700; line-height: 0.92; letter-spacing: -0.04em;
     margin-bottom: 1.5rem;
   }
-
   .hero h1 .gradient {
     background: linear-gradient(135deg, var(--accent) 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-style: italic;
-    font-weight: 600;
+    font-style: italic; font-weight: 600;
   }
-
   .hero-sub {
-    max-width: 480px;
-    font-size: 1rem;
-    color: var(--ink-soft);
-    line-height: 1.6;
+    max-width: 480px; font-size: 1rem;
+    color: var(--ink-soft); line-height: 1.6;
   }
 
-  /* ── ROOM OVERVIEW STATS ──────────────────── */
   .stats {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1400px; margin: 0 auto;
     padding: 2rem 2rem 4rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
     border-top: 1px solid var(--line);
   }
-
   .stat {
     padding: 1.5rem 1.25rem;
-    border: 1px solid var(--line);
-    border-radius: 4px;
+    border: 1px solid var(--line); border-radius: 4px;
     background: rgba(20, 20, 28, 0.4);
     backdrop-filter: blur(8px);
     transition: border-color 0.3s ease, transform 0.3s ease;
   }
-
-  .stat:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-
+  .stat:hover { border-color: var(--accent); transform: translateY(-2px); }
   .stat-num {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1;
+    font-size: 2.5rem; font-weight: 700; line-height: 1;
     letter-spacing: -0.03em;
     background: linear-gradient(135deg, var(--accent) 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
   }
-
   .stat-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-soft);
   }
 
-  /* ── SECTIONS ───────────────────────────────── */
   .section {
     padding: 4rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1400px; margin: 0 auto;
     border-top: 1px solid var(--line);
   }
-
   .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 2rem;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: flex; justify-content: space-between;
+    align-items: baseline; margin-bottom: 2rem;
+    gap: 1rem; flex-wrap: wrap;
   }
-
-  .section-left {
-    display: flex;
-    align-items: baseline;
-    gap: 1.5rem;
-  }
-
+  .section-left { display: flex; align-items: baseline; gap: 1.5rem; }
   .section-number {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: var(--accent);
+    font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent);
   }
-
   .section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;
   }
-
   .section-desc {
-    color: var(--ink-soft);
-    font-size: 0.9rem;
-    max-width: 400px;
-    text-align: right;
+    color: var(--ink-soft); font-size: 0.9rem;
+    max-width: 400px; text-align: right;
   }
 
-  /* ── COMPARISON ───────────────────────────── */
   .comparison {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    position: relative;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; position: relative;
   }
-
   .image-frame {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    background: var(--bg-alt);
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 4px;
+    position: relative; aspect-ratio: 4 / 3;
+    background: var(--bg-alt); overflow: hidden;
+    border: 1px solid var(--line); border-radius: 4px;
     transition: border-color 0.3s ease, transform 0.4s ease;
   }
-
-  .image-frame:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-
+  .image-frame:hover { border-color: var(--accent); transform: translateY(-2px); }
   .image-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-
   .image-frame:hover img { transform: scale(1.03); }
 
   .image-label {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
+    position: absolute; top: 1rem; left: 1rem;
     background: rgba(10, 10, 15, 0.85);
     backdrop-filter: blur(8px);
     padding: 0.4rem 0.8rem;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft);
     border: 1px solid var(--line);
-    z-index: 2;
-    border-radius: 3px;
+    z-index: 2; border-radius: 3px;
   }
-
   .image-label.after {
-    background: var(--accent);
-    color: #fff;
+    background: var(--accent); color: #fff;
     border-color: var(--accent);
     box-shadow: 0 0 20px var(--accent-glow);
   }
 
-  /* Single image full-width frame */
   .single-frame {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    background: var(--bg-alt);
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 4px;
+    position: relative; aspect-ratio: 16 / 10;
+    background: var(--bg-alt); overflow: hidden;
+    border: 1px solid var(--line); border-radius: 4px;
     transition: border-color 0.3s ease;
   }
-
   .single-frame:hover { border-color: var(--accent); }
-
   .single-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-
   .single-frame:hover img { transform: scale(1.02); }
 
-  /* ── FLOORPLAN ────────────────────────────── */
   .floorplans {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
   }
-
   .floorplan {
     position: relative;
-    border: 1px solid var(--line);
-    border-radius: 4px;
+    border: 1px solid var(--line); border-radius: 4px;
     padding: 1.5rem;
     background:
       radial-gradient(ellipse at center, rgba(168, 85, 247, 0.06), transparent 70%),
       rgba(20, 20, 28, 0.3);
     transition: border-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
   }
-
   .floorplan:hover { border-color: var(--accent); }
-
   .floorplan-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
+    font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
     margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
   }
-
   .floorplan-label::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent-glow);
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);
   }
-
   .floorplan-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
+    width: 100%; height: auto; display: block; object-fit: contain;
   }
 
-  /* ── FOOTER ───────────────────────────────── */
   footer {
     border-top: 1px solid var(--line);
     padding: 5rem 2rem 3rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    flex-wrap: wrap;
-    gap: 2rem;
+    max-width: 1400px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+    align-items: end; flex-wrap: wrap; gap: 2rem;
   }
-
   .footer-mark {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
+    font-size: 3rem; font-weight: 700;
+    line-height: 0.95; letter-spacing: -0.03em;
   }
-
   .footer-mark .gradient {
     background: linear-gradient(135deg, var(--accent) 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
     font-style: italic;
   }
-
   .footer-meta {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: right;
-    line-height: 1.9;
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-align: right; line-height: 1.9;
   }
 
-  /* ── ENTRANCE ANIMATIONS ──────────────────── */
   .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
+    opacity: 0; transform: translateY(24px);
     transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── RESPONSIVE ───────────────────────────── */
   @media (max-width: 768px) {
     header { padding: 1rem 1.25rem; }
     .header-meta { display: none; }
@@ -422,17 +269,14 @@
     .stat-num { font-size: 2rem; }
     .section { padding: 3rem 1.25rem; }
     .section-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
+      flex-direction: column; align-items: flex-start; gap: 0.75rem;
     }
     .section-desc { text-align: left; }
     .comparison { grid-template-columns: 1fr; gap: 0.75rem; }
     .single-frame { aspect-ratio: 4 / 3; }
     .floorplans { grid-template-columns: 1fr; gap: 1rem; }
     footer {
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: column; align-items: flex-start;
       padding: 3rem 1.25rem 2rem;
     }
     .footer-mark { font-size: 2rem; }
@@ -458,7 +302,7 @@
   </p>
 </section>
 
-<!-- ROOM OVERVIEW STATS -->
+<!-- STATS -->
 <div class="stats">
   <div class="stat">
     <div class="stat-num">6</div>
@@ -478,95 +322,32 @@
   </div>
 </div>
 
-<!-- 01 — TV / LOUNGE ZONE -->
+<!-- 01 — FLOORPLANS -->
 <section class="section fade-up">
   <div class="section-header">
     <div class="section-left">
       <span class="section-number">01</span>
-      <h2 class="section-title">TV Зона</h2>
+      <h2 class="section-title">Планировка</h2>
     </div>
-    <p class="section-desc">Лаунж с большим экраном для просмотров и трансляций.</p>
+    <p class="section-desc">Two floors · Ground &amp; 1st Floor.</p>
   </div>
-  <div class="comparison">
-    <div class="image-frame">
-      <span class="image-label">До</span>
-      <img src="images/tv_bereich_vorher.jpg" alt="TV Зона до ремонта" loading="lazy">
+  <div class="floorplans">
+    <div class="floorplan">
+      <div class="floorplan-label">Ground Floor</div>
+      <img class="floorplan-img" src="images/grundriss_1.png" alt="Grundriss Erdgeschoss" loading="lazy">
     </div>
-    <div class="image-frame">
-      <span class="image-label after">После</span>
-      <img src="images/tv_bereich_nachher.png" alt="TV Зона после ремонта" loading="lazy">
+    <div class="floorplan">
+      <div class="floorplan-label">1st Floor</div>
+      <img class="floorplan-img" src="images/grundriss_topfloor.png" alt="Grundriss 1. Etage" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- 02 — MINI MEETING ROOM -->
+<!-- 02 — RECEPTION -->
 <section class="section fade-up">
   <div class="section-header">
     <div class="section-left">
       <span class="section-number">02</span>
-      <h2 class="section-title">Мини-переговорная</h2>
-    </div>
-    <p class="section-desc">Камерное пространство для созвонов и встреч.</p>
-  </div>
-  <div class="comparison">
-    <div class="image-frame">
-      <span class="image-label">До</span>
-      <img src="images/minikonfio_vorher.png" alt="Мини-переговорная до" loading="lazy">
-    </div>
-    <div class="image-frame">
-      <span class="image-label after">После</span>
-      <img src="images/minikonfi_nachher.png" alt="Мини-переговорная после" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- 03 — STREAMING ROOM -->
-<section class="section fade-up">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-number">03</span>
-      <h2 class="section-title">Стриминг-комната</h2>
-    </div>
-    <p class="section-desc">Воркстейшн с тремя мониторами под стримы и контент.</p>
-  </div>
-  <div class="comparison">
-    <div class="image-frame">
-      <span class="image-label">До</span>
-      <img src="images/streaminzimmer_vorher.jpg" alt="Стриминг-комната до" loading="lazy">
-    </div>
-    <div class="image-frame">
-      <span class="image-label after">После</span>
-      <img src="images/streamingzimmer_nachher.png" alt="Стриминг-комната после" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- 04 — PODCAST ROOM -->
-<section class="section fade-up">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-number">04</span>
-      <h2 class="section-title">Подкаст-студия</h2>
-    </div>
-    <p class="section-desc">Уютная зона для записи подкастов и интервью.</p>
-  </div>
-  <div class="comparison">
-    <div class="image-frame">
-      <span class="image-label">До</span>
-      <img src="images/podcastraum_vorher.jpg" alt="Подкаст-студия до" loading="lazy">
-    </div>
-    <div class="image-frame">
-      <span class="image-label after">После</span>
-      <img src="images/podcastraum_nachher.png" alt="Подкаст-студия после" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- 05 — RECEPTION -->
-<section class="section fade-up">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-number">05</span>
       <h2 class="section-title">Ресепшн</h2>
     </div>
     <p class="section-desc">Входная зона с ресепшном, барной стойкой и брендингом.</p>
@@ -583,11 +364,32 @@
   </div>
 </section>
 
-<!-- 06 — LIVING ROOM -->
+<!-- 03 — TV ZONE -->
 <section class="section fade-up">
   <div class="section-header">
     <div class="section-left">
-      <span class="section-number">06</span>
+      <span class="section-number">03</span>
+      <h2 class="section-title">TV Зона</h2>
+    </div>
+    <p class="section-desc">Лаунж с большим экраном для просмотров и трансляций.</p>
+  </div>
+  <div class="comparison">
+    <div class="image-frame">
+      <span class="image-label">До</span>
+      <img src="images/tv_bereich_vorher.jpg" alt="TV Зона до ремонта" loading="lazy">
+    </div>
+    <div class="image-frame">
+      <span class="image-label after">После</span>
+      <img src="images/tv_bereich_nachher.png" alt="TV Зона после ремонта" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 04 — LIVING ROOM -->
+<section class="section fade-up">
+  <div class="section-header">
+    <div class="section-left">
+      <span class="section-number">04</span>
       <h2 class="section-title">Гостиная</h2>
     </div>
     <p class="section-desc">Зона отдыха для команды и гостей офиса.</p>
@@ -598,23 +400,65 @@
   </div>
 </section>
 
-<!-- 07 — FLOORPLANS -->
+<!-- 05 — STREAMING ROOM -->
+<section class="section fade-up">
+  <div class="section-header">
+    <div class="section-left">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Стриминг-комната</h2>
+    </div>
+    <p class="section-desc">Воркстейшн с тремя мониторами под стримы и контент.</p>
+  </div>
+  <div class="comparison">
+    <div class="image-frame">
+      <span class="image-label">До</span>
+      <img src="images/streaminzimmer_vorher.jpg" alt="Стриминг-комната до" loading="lazy">
+    </div>
+    <div class="image-frame">
+      <span class="image-label after">После</span>
+      <img src="images/streamingzimmer_nachher.png" alt="Стриминг-комната после" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 06 — PODCAST ROOM -->
+<section class="section fade-up">
+  <div class="section-header">
+    <div class="section-left">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Подкаст-студия</h2>
+    </div>
+    <p class="section-desc">Уютная зона для записи подкастов и интервью.</p>
+  </div>
+  <div class="comparison">
+    <div class="image-frame">
+      <span class="image-label">До</span>
+      <img src="images/podcastraum_vorher.jpg" alt="Подкаст-студия до" loading="lazy">
+    </div>
+    <div class="image-frame">
+      <span class="image-label after">После</span>
+      <img src="images/podcastraum_nachher.png" alt="Подкаст-студия после" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 07 — MINI MEETING ROOM -->
 <section class="section fade-up">
   <div class="section-header">
     <div class="section-left">
       <span class="section-number">07</span>
-      <h2 class="section-title">Планировка</h2>
+      <h2 class="section-title">Мини-переговорная</h2>
     </div>
-    <p class="section-desc">Two floors · Ground &amp; 1st Floor.</p>
+    <p class="section-desc">Камерное пространство для созвонов и встреч.</p>
   </div>
-  <div class="floorplans">
-    <div class="floorplan">
-      <div class="floorplan-label">Ground Floor</div>
-      <img class="floorplan-img" src="images/grundriss_1.png" alt="Grundriss Erdgeschoss" loading="lazy">
+  <div class="comparison">
+    <div class="image-frame">
+      <span class="image-label">До</span>
+      <img src="images/minikonfio_vorher.png" alt="Мини-переговорная до" loading="lazy">
     </div>
-    <div class="floorplan">
-      <div class="floorplan-label">1st Floor</div>
-      <img class="floorplan-img" src="images/grundriss_topfloor.png" alt="Grundriss 1. Etage" loading="lazy">
+    <div class="image-frame">
+      <span class="image-label after">После</span>
+      <img src="images/minikonfi_nachher.png" alt="Мини-переговорная после" loading="lazy">
     </div>
   </div>
 </section>
